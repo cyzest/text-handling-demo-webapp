@@ -33,4 +33,9 @@ public class CustomTextSorterTest {
         Assertions.assertEquals(customTextSort.sort("#!0abA798Zc0abA798Zc!#"), "A0A0a7a7b8b8c9c9ZZ!!##");
     }
 
+    @Test
+    public void sortTest5() {
+        Assertions.assertEquals(customTextSort.sort("htmlbodyTESTbodyhtml"), "bbddEhhllmmooSTTttyy");
+    }
+
 }

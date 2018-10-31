@@ -19,11 +19,9 @@ public class CustomTextSorter implements TextSorter {
     @Override
     public String sort(String text) {
 
-        String soredText = null;
-
         if (isNotEmpty(text)) {
 
-            soredText = "";
+            String soredText = "";
 
             StringBuilder alphabetGroup = new StringBuilder();
             StringBuilder numberGroup = new StringBuilder();
@@ -57,9 +55,11 @@ public class CustomTextSorter implements TextSorter {
             if (isNotEmpty(sortedOther)) {
                 soredText += sortedOther;
             }
+
+            return soredText;
         }
 
-        return soredText;
+        return text;
     }
 
     private boolean isAlphabet(char character) {
