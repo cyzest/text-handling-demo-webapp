@@ -82,14 +82,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring REST Docs -->
-        <dependency>
-            <groupId>org.springframework.restdocs</groupId>
-            <artifactId>spring-restdocs-mockmvc</artifactId>
-            <version>2.0.2.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Project Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>

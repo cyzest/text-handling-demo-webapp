@@ -9,6 +9,54 @@
     <script src="/js/index.js"></script>
 </head>
 <body>
-<h3>Text Handling Demo Web Appication</h3>
+<div id="wrapper" class="animate">
+
+    <div class="container">
+        <div class="row">
+            <h3>Text Handling Demo Web Appication</h3>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                URL
+                <input id="url" class="form-control" type="text" placeholder="URL" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-3">
+                텍스트 타입
+                <select id="textType" data-filter="make" class="filter-make filter form-control">
+                        <option value="TEXT">TEXT</option>
+                        <option value="HTML">HTML</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-3">
+                출력 단위 그룹
+                <input id="textGroupUnit" class="form-control" type="text" placeholder="ex) 1" />
+            </div>
+            <div class="form-group col-xs-3">
+                &nbsp;
+                <button id="search" type="button" class="btn btn-block btn-primary">Search</button>
+            </div>
+            <div class="form-group col-xs-3">
+                <br />
+                &nbsp;&nbsp;&nbsp;<span id="loading"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="textGroup">몫</label>
+                <textarea class="form-control rounded-0" id="textGroup" cols="100" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label for="otherGroup">나머지</label>
+                <textarea class="form-control rounded-0" id="otherGroup" cols="100" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
