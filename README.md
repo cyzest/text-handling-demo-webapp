@@ -1,5 +1,8 @@
 # text-handling-demo-webapp
 
+[![Build Status](https://travis-ci.org/cyzest/text-handling-demo-webapp.svg?branch=master)](https://travis-ci.org/cyzest/text-handling-demo-webapp)
+[![Code Coverage](https://codecov.io/gh/cyzest/text-handling-demo-webapp/branch/master/graph/badge.svg)](https://codecov.io/gh/cyzest/text-handling-demo-webapp)
+
 ### Text Handling Demo Web Application
 
 1. Java 8 버전을 사용
