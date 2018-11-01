@@ -9,7 +9,7 @@
 ### Back-end 추가 라이브러리
 
 1. Lombok - Boilerplate 코드 자동생성 용도
-1. Jsop - HTML 파싱 용도
+1. Jsoup - HTML 파싱 용도
 
 ### 빌드 및 실행 (Local)
 

@@ -2,7 +2,7 @@ package com.cyzest.texthandler.config;
 
 import com.cyzest.texthandler.dto.TextType;
 import com.cyzest.texthandler.handler.*;
-import com.cyzest.texthandler.reader.JsopUrlHtmlReader;
+import com.cyzest.texthandler.reader.JsoupUrlHtmlReader;
 import com.cyzest.texthandler.reader.UrlHtmlReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ public class AppConfig {
 
     @Bean
     public UrlHtmlReader urlHtmlReader() {
-        return new JsopUrlHtmlReader();
+        return new JsoupUrlHtmlReader();
     }
 
     @Bean

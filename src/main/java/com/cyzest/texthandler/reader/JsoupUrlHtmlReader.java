@@ -3,9 +3,9 @@ package com.cyzest.texthandler.reader;
 import org.jsoup.Jsoup;
 
 /**
- * JSOP Based URL HTML Reader
+ * Jsoup Based URL HTML Reader
  */
-public class JsopUrlHtmlReader implements UrlHtmlReader {
+public class JsoupUrlHtmlReader implements UrlHtmlReader {
 
     @Override
     public String read(String url) throws Exception {
