@@ -2,6 +2,7 @@ package com.cyzest.texthandler.controller;
 
 import com.cyzest.texthandler.dto.TextGroupResult;
 import com.cyzest.texthandler.dto.TextHandleParam;
+import com.cyzest.texthandler.dto.TextType;
 import com.cyzest.texthandler.exception.ParamException;
 import com.cyzest.texthandler.service.TextHandleService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +19,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.is;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -50,11 +50,16 @@ public class TextHandleControllerTest {
     @Test
     public void getHandleTextTest() throws Exception {
 
+        TextHandleParam textHandleParam = new TextHandleParam();
+        textHandleParam.setUrl(mockUrl);
+        textHandleParam.setTextType(TextType.TEXT);
+        textHandleParam.setTextGroupUnit(8);
+
         TextGroupResult textGroupResult = new TextGroupResult();
         textGroupResult.setGroupTextList(Arrays.asList("bbddEhhl", "lmmooSTT"));
         textGroupResult.setOtherText("ttyy");
 
-        when(textHandleService.createHandleResult(any(TextHandleParam.class))).thenReturn(textGroupResult);
+        when(textHandleService.createHandleResult(textHandleParam)).thenReturn(textGroupResult);
 
         mvc.perform(get("/api/v1/text?url=" + mockUrl + "&textType=TEXT&textGroupUnit=8"))
                 .andExpect(status().isOk())
@@ -62,19 +67,24 @@ public class TextHandleControllerTest {
                 .andExpect(jsonPath("$.groupTextList[1]", is("lmmooSTT")))
                 .andExpect(jsonPath("$.otherText", is("ttyy")));
 
-        verify(textHandleService, times(1)).createHandleResult(any(TextHandleParam.class));
+        verify(textHandleService, times(1)).createHandleResult(textHandleParam);
     }
 
     @Test
     public void getHandleTextExceptionTest() throws Exception {
 
+        TextHandleParam textHandleParam = new TextHandleParam();
+        textHandleParam.setUrl(mockUrl);
+        textHandleParam.setTextType(TextType.TEXT);
+        textHandleParam.setTextGroupUnit(8);
+
         doThrow(new ParamException("test"))
-                .when(textHandleService).createHandleResult(any(TextHandleParam.class));
+                .when(textHandleService).createHandleResult(textHandleParam);
 
         mvc.perform(get("/api/v1/text?url=" + mockUrl + "&textType=TEXT&textGroupUnit=8"))
                 .andExpect(status().isBadRequest());
 
-        verify(textHandleService, times(1)).createHandleResult(any(TextHandleParam.class));
+        verify(textHandleService, times(1)).createHandleResult(textHandleParam);
     }
 
 }

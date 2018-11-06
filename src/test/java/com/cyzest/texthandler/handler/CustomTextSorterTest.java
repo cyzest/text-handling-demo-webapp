@@ -20,22 +20,22 @@ public class CustomTextSorterTest {
 
     @Test
     public void sortTest2() {
-        Assertions.assertEquals(customTextSort.sort(""), "");
+        Assertions.assertEquals("", customTextSort.sort(""));
     }
 
     @Test
     public void sortTest3() {
-        Assertions.assertEquals(customTextSort.sort("#!0abA798Zc"), "A0a7b8c9Z!#");
+        Assertions.assertEquals("A0a7b8c9Z!#", customTextSort.sort("#!0abA798Zc"));
     }
 
     @Test
     public void sortTest4() {
-        Assertions.assertEquals(customTextSort.sort("#!0abA798Zc0abA798Zc!#"), "A0A0a7a7b8b8c9c9ZZ!!##");
+        Assertions.assertEquals("A0A0a7a7b8b8c9c9ZZ!!##", customTextSort.sort("#!0abA798Zc0abA798Zc!#"));
     }
 
     @Test
     public void sortTest5() {
-        Assertions.assertEquals(customTextSort.sort("htmlbodyTESTbodyhtml"), "bbddEhhllmmooSTTttyy");
+        Assertions.assertEquals("bbddEhhllmmooSTTttyy", customTextSort.sort("htmlbodyTESTbodyhtml"));
     }
 
 }

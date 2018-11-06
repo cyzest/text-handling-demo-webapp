@@ -26,13 +26,13 @@ public class HtmlTagDeleteTextConverterTest {
     @Test
     public void convertTest3() {
         String text = "<html ><head></head> <body>TEST<a href=\"http://cyzest.com?id=1#test\">LINK</a></body></ html>";
-        Assertions.assertEquals(htmlTagDeleteTextConvert.convert(text), "TESTLINK");
+        Assertions.assertEquals("TESTLINK", htmlTagDeleteTextConvert.convert(text));
     }
 
     @Test
     public void convertTest4() {
         String text = "<html ><head><title>TITLE</title></head> <body>TEST<한글></body></ html>";
-        Assertions.assertEquals(htmlTagDeleteTextConvert.convert(text), "TITLETEST");
+        Assertions.assertEquals("TITLETEST", htmlTagDeleteTextConvert.convert(text));
     }
 
 }

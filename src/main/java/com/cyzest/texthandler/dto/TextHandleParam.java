@@ -1,5 +1,6 @@
 package com.cyzest.texthandler.dto;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 public class TextHandleParam {
 
     @NotEmpty
