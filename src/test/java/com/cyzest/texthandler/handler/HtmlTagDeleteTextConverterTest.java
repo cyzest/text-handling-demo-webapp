@@ -20,7 +20,7 @@ public class HtmlTagDeleteTextConverterTest {
 
     @Test
     public void convertTest2() {
-        Assertions.assertEquals(htmlTagDeleteTextConvert.convert(""), "");
+        Assertions.assertEquals("", htmlTagDeleteTextConvert.convert(""));
     }
 
     @Test

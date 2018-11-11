@@ -40,6 +40,7 @@ public class TextHandleServiceTest {
     private TextHandleService textHandleService;
 
     private String mockUrl;
+
     private String mockHtml;
 
     @BeforeEach
@@ -129,7 +130,7 @@ public class TextHandleServiceTest {
                         () -> textHandleService.createHandleResult(textHandleParam)).getMessage());
 
         verify(urlHtmlReader, times(1)).read(mockUrl);
-        verify(textTypeTextConvertMap, never()).get(mockTextType);
+        verify(textTypeTextConvertMap, never()).get(any(TextType.class));
     }
 
     @Test
@@ -137,7 +138,6 @@ public class TextHandleServiceTest {
     public void createHandleResultTest4() throws Exception {
 
         TextType mockTextType = TextType.TEXT;
-        String mockTextTypeConvertedText = "TEST";
 
         when(urlHtmlReader.read(mockUrl)).thenReturn(mockHtml);
         when(textTypeTextConvertMap.get(mockTextType)).thenReturn(null);
@@ -155,7 +155,7 @@ public class TextHandleServiceTest {
 
         verify(urlHtmlReader, times(1)).read(mockUrl);
         verify(textTypeTextConvertMap, times(1)).get(mockTextType);
-        verify(textSorter, never()).sort(mockTextTypeConvertedText);
+        verify(textSorter, never()).sort(anyString());
     }
 
 }
